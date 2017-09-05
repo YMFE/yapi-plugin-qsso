@@ -1,5 +1,5 @@
 import React from 'react';
-const Qsso = require('./Qsso.js');
+const Qsso = require('./qsso-lib');
 
 class QssoComponent extends React.Component{
   componentDidMount(){
