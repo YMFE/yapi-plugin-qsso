@@ -3,7 +3,6 @@ const request = require('request');
 module.exports = function () {
   this.bindHook('third_login', (ctx) => {
     let token = ctx.request.body.token || ctx.request.query.token;
-    console.log(token)
     return new Promise((resolve, reject) => {
       request('http://qsso.corp.qunar.com/api/verifytoken.php?token=' + token, function (error, response, body) {
         if (!error && response.statusCode == 200) {
