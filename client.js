@@ -12,9 +12,9 @@ const qualifyURL = (url, encode) => {
 module.exports = function (options) {
   const handleLogin = () => {
     const loginURI = '/api/user/login_by_token';
-    const { AUTH_SERVER, LOGIN_PAGE } = options;
+    const { AUTH_SERVER } = options;
     let ret = qualifyURL(loginURI, true);
-    let redirectURL = AUTH_SERVER + LOGIN_PAGE + '?ret=' + ret;
+    let redirectURL = AUTH_SERVER  + '?ret=' + ret;
     location.href = redirectURL;
   }
 
