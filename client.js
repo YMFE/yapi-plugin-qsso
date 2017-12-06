@@ -1,16 +1,36 @@
-import React from 'react';
-const Qsso = require('./qsso-lib');
+import React, { Component } from 'react'
 
-class QssoComponent extends React.Component{
-  componentDidMount(){
-    Qsso.attach('qsso-login', '/api/user/login_by_token');
+const qualifyURL = (url, encode) => {
+  url = url || '';
+  var ret = location.protocol + '//' + location.host + (url.substr(0, 1) === '/' ? '' : location.pathname.match(/.*\//)) + url;
+  if (encode) {
+    ret = encodeURIComponent(ret);
   }
-  render(){
-    return <button id="qsso-login"   className="btn-home btn-home-normal" >QSSO 登录</button>;
-  }
+  return ret;
 }
 
-module.exports = function(){
+module.exports = function (options) {
+  const handleLogin = () => {
+    const loginURI = '/api/user/login_by_token';
+    const { AUTH_SERVER, LOGIN_PAGE } = options;
+    let ret = qualifyURL(loginURI, true);
+    let redirectURL = AUTH_SERVER + LOGIN_PAGE + '?ret=' + ret;
+    location.href = redirectURL;
+  }
+
+  const QssoComponent = () => (
+    <button onClick={handleLogin} className="btn-home btn-home-normal" >QSSO 登录</button>
+  )
+
   this.bindHook('third_login', QssoComponent);
 };
+
+
+
+
+
+
+
+
+
 
