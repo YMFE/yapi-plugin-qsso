@@ -1,19 +1,15 @@
 {
-  "name": "yapi-plugin-qsso",
-  "version": "1.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YMFE/yapi-plugin-qsso.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/YMFE/yapi-plugin-qsso/issues"
-  },
-  "homepage": "https://github.com/YMFE/yapi-plugin-qsso#readme"
+    "name": "yapi-plugin-qsso",
+    "version": "1.1.0",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/YMFE/yapi-plugin-qsso.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/YMFE/yapi-plugin-qsso/issues"
+    },
+    "homepage": "https://github.com/YMFE/yapi-plugin-qsso#readme"
 }
